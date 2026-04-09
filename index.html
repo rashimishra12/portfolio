@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rashi Mishra — PR & Marketing Strategist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --slate:    #494d54;
+    --sand:     #d6c6ac;
+    --black:    #000000;
+    --khaki:    #aa9371;
+    --cream:    #fef4e3;
+    --khaki-dk: #8a7560;
+    --white:    #ffffff;
+    --sand-lt:  #ede3d4;
+    --slate-lt: #5c6169;
+    --text:     #2a2a2a;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 200;
+    background: rgba(254,244,227,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(170,147,113,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    height: 64px;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--slate);
+    letter-spacing: 1px;
+  }
+
+  .nav-center {
+    display: flex;
+    gap: 32px;
+  }
+
+  .nav-center a {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--slate);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color .25s;
+  }
+  .nav-center a:hover { color: var(--khaki); }
+
+  .nav-right {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .btn-nav {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 9px 22px;
+    border: 1px solid var(--khaki);
+    color: var(--khaki);
+    transition: all .25s;
+    white-space: nowrap;
+  }
+  .btn-nav:hover { background: var(--khaki); color: var(--cream); }
+
+  .btn-nav-solid {
+    background: var(--slate);
+    color: var(--cream);
+    border-color: var(--slate);
+  }
+  .btn-nav-solid:hover { background: var(--black); border-color: var(--black); color: var(--cream); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-texture {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 700px 500px at 80% 40%, rgba(170,147,113,0.12) 0%, transparent 65%),
+      radial-gradient(ellipse 400px 300px at 20% 80%, rgba(73,77,84,0.3) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* Decorative vertical lines */
+  .hero-lines {
+    position: absolute; top: 0; right: 120px; bottom: 0;
+    display: flex; gap: 28px; pointer-events: none;
+  }
+  .hero-lines span {
+    display: block; width: 1px;
+    background: linear-gradient(to bottom, transparent 10%, rgba(170,147,113,0.2) 40%, rgba(170,147,113,0.2) 60%, transparent 90%);
+  }
+
+  .hero-content { position: relative; max-width: 820px; }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--khaki);
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 40px; height: 1px;
+    background: var(--khaki);
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(70px, 9vw, 130px);
+    font-weight: 300;
+    line-height: 0.88;
+    color: var(--white);
+    letter-spacing: -1px;
+    margin-bottom: 36px;
+  }
+  .hero-name em {
+    font-style: italic;
+    color: var(--sand);
+  }
+
+  .hero-desc {
+    font-size: 16px;
+    color: rgba(214,198,172,0.75);
+    max-width: 520px;
+    line-height: 1.75;
+    margin-bottom: 64px;
+    font-weight: 300;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 56px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(170,147,113,0.2);
+    margin-bottom: 56px;
+  }
+
+  .stat-n {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    color: var(--sand);
+    display: block;
+    line-height: 1;
+  }
+
+  .stat-l {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(214,198,172,0.5);
+    margin-top: 6px;
+    display: block;
+  }
+
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .cta-primary {
+    display: inline-block;
+    padding: 14px 36px;
+    background: var(--khaki);
+    color: var(--black);
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all .3s;
+  }
+  .cta-primary:hover { background: var(--sand); }
+
+  .cta-ghost {
+    display: inline-block;
+    padding: 14px 36px;
+    border: 1px solid rgba(214,198,172,0.3);
+    color: rgba(214,198,172,0.7);
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all .3s;
+  }
+  .cta-ghost:hover { border-color: var(--sand); color: var(--sand); }
+
+  /* ── SECTION BASE ── */
+  section { padding: 110px 80px; }
+  .container { max-width: 1080px; margin: 0 auto; }
+  .container-md { max-width: 820px; margin: 0 auto; }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--khaki);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .eyebrow::before { content: ''; display: block; width: 30px; height: 1px; background: var(--khaki); }
+
+  .sec-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 5vw, 56px);
+    font-weight: 300;
+    color: var(--black);
+    line-height: 1.05;
+    margin-bottom: 16px;
+  }
+  .sec-title em { font-style: italic; color: var(--khaki); }
+
+  .sec-sub {
+    font-size: 14px;
+    color: var(--slate);
+    font-style: italic;
+    margin-bottom: 64px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--white); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+  }
+
+  .about-body {
+    color: var(--slate);
+    font-size: 15px;
+    line-height: 1.85;
+    font-weight: 300;
+  }
+  .about-body p + p { margin-top: 18px; }
+
+  .about-line {
+    width: 50px; height: 2px;
+    background: var(--khaki);
+    margin: 28px 0;
+  }
+
+  .expertise-list { list-style: none; margin-top: 8px; }
+  .expertise-list li {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--sand-lt);
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: var(--slate);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .expertise-list li::before {
+    content: '';
+    display: block;
+    width: 5px; height: 5px;
+    background: var(--khaki);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── PRESS ── */
+  #press { background: var(--cream); }
+
+  .press-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--sand);
+    margin-bottom: 64px;
+  }
+
+  .press-count {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--slate);
+    font-style: italic;
+  }
+
+  /* Featured cards */
+  .featured-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-bottom: 64px;
+  }
+
+  .press-card {
+    background: var(--white);
+    padding: 36px;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    transition: background .25s;
+    border-left: 3px solid transparent;
+  }
+  .press-card:hover { background: var(--sand-lt); border-left-color: var(--khaki); }
+
+  .pc-source {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--khaki);
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+
+  .pc-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--black);
+    line-height: 1.3;
+    margin-bottom: 14px;
+  }
+
+  .pc-date {
+    font-size: 11px;
+    color: var(--slate);
+    letter-spacing: 1px;
+  }
+
+  .pc-arrow {
+    position: absolute;
+    top: 36px; right: 36px;
+    color: var(--khaki);
+    opacity: 0;
+    transition: opacity .25s, transform .25s;
+    transform: translate(-6px, 6px);
+    font-size: 18px;
+  }
+  .press-card:hover .pc-arrow { opacity: 1; transform: translate(0,0); }
+
+  /* Also featured in */
+  .also-label {
+    font-size: 10px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 72px;
+  }
+
+  .pill {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 1px solid var(--sand);
+    font-size: 12px;
+    color: var(--slate);
+    text-decoration: none;
+    transition: all .2s;
+    background: transparent;
+    white-space: nowrap;
+    font-weight: 300;
+  }
+  .pill:hover { border-color: var(--khaki); color: var(--khaki); background: rgba(170,147,113,0.05); }
+
+  /* Sub-section divider */
+  .subsec {
+    padding-top: 56px;
+    border-top: 1px solid var(--sand);
+    margin-top: 8px;
+  }
+
+  .subsec-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--black);
+    margin-bottom: 6px;
+  }
+
+  .subsec-note {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--slate);
+    margin-bottom: 40px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+  }
+
+  /* ── CASE STUDIES ── */
+  #work { background: var(--slate); }
+  #work .sec-title { color: var(--cream); }
+  #work .eyebrow { color: var(--sand); }
+  #work .eyebrow::before { background: var(--sand); }
+  #work .sec-sub { color: rgba(214,198,172,0.6); }
+
+  .case-study {
+    border: 1px solid rgba(214,198,172,0.15);
+    margin-bottom: 2px;
+  }
+
+  .case-hdr {
+    padding: 28px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background .2s;
+    background: rgba(0,0,0,0.25);
+  }
+  .case-hdr:hover { background: rgba(0,0,0,0.4); }
+
+  .case-num {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--sand);
+    opacity: .6;
+    margin-bottom: 6px;
+  }
+
+  .case-ttl {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--cream);
+  }
+
+  .case-tog {
+    width: 30px; height: 30px;
+    border: 1px solid rgba(214,198,172,0.3);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--sand);
+    font-size: 17px;
+    flex-shrink: 0;
+    transition: all .2s;
+  }
+
+  .case-body { display: none; }
+  .case-body.open { display: block; }
+
+  .case-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(214,198,172,0.1);
+  }
+
+  .case-pillar {
+    padding: 28px 28px;
+    background: var(--slate);
+  }
+
+  .pillar-lbl {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--khaki);
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .pillar-txt {
+    font-size: 13px;
+    color: rgba(214,198,172,0.7);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ── AWARDS ── */
+  #awards { background: var(--white); }
+
+  .awards-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-bottom: 48px;
+  }
+
+  .award-card {
+    background: var(--cream);
+    padding: 28px;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    transition: background .2s;
+    border-top: 2px solid transparent;
+  }
+  .award-card:hover { background: var(--sand-lt); border-top-color: var(--khaki); }
+
+  .aw-year {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--khaki);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .aw-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--black);
+    line-height: 1.4;
+  }
+
+  /* ── SPEAKING (podcasts + panels) ── */
+  #speaking { background: var(--cream); }
+
+  .speaking-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+
+  .sp-col-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--black);
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--sand);
+    margin-bottom: 4px;
+  }
+
+  .sp-item {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(170,147,113,0.12);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    transition: padding-left .2s;
+  }
+  .sp-item:hover { padding-left: 10px; }
+
+  .sp-name {
+    font-size: 13px;
+    color: var(--slate);
+    transition: color .2s;
+    font-weight: 400;
+  }
+  .sp-item:hover .sp-name { color: var(--khaki); }
+
+  .sp-date {
+    font-size: 11px;
+    color: var(--sand);
+    white-space: nowrap;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--black);
+    text-align: center;
+    padding: 120px 60px;
+  }
+
+  #contact .eyebrow { justify-content: center; color: var(--sand); }
+  #contact .eyebrow::before { background: var(--sand); }
+
+  .contact-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 7vw, 80px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+  .contact-title em { color: var(--sand); font-style: italic; }
+
+  .contact-desc {
+    font-size: 15px;
+    color: rgba(214,198,172,0.6);
+    max-width: 440px;
+    margin: 0 auto 56px;
+    font-weight: 300;
+  }
+
+  .contact-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  .contact-email {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--sand);
+    text-decoration: none;
+    margin-bottom: 48px;
+    letter-spacing: 1px;
+    transition: color .2s;
+  }
+  .contact-email:hover { color: var(--khaki); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black);
+    border-top: 1px solid rgba(170,147,113,0.15);
+    padding: 28px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer .f-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--sand);
+  }
+
+  footer p {
+    font-size: 11px;
+    color: rgba(214,198,172,0.35);
+    letter-spacing: 1px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .nav-center { display: none; }
+    section { padding: 80px 24px; }
+    #hero { padding: 0 24px; min-height: 100vh; padding-top: 80px; }
+    .about-grid { grid-template-columns: 1fr; gap: 48px; }
+    .featured-cards { grid-template-columns: 1fr; }
+    .case-grid { grid-template-columns: 1fr 1fr; }
+    .awards-cards { grid-template-columns: 1fr 1fr; }
+    .speaking-cols { grid-template-columns: 1fr; gap: 48px; }
+    .hero-stats { flex-wrap: wrap; gap: 32px; }
+    footer { flex-direction: column; gap: 12px; padding: 24px; text-align: center; }
+  }
+
+  @media (max-width: 600px) {
+    .case-grid { grid-template-columns: 1fr; }
+    .awards-cards { grid-template-columns: 1fr; }
+    .hero-lines { display: none; }
+  }
+
+  /* ── REVEAL ANIMATION ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-logo">Rashi Mishra</div>
+  <div class="nav-center">
+    <a href="#about">About</a>
+    <a href="#press">Press</a>
+    <a href="#work">Work</a>
+    <a href="#awards">Awards</a>
+    <a href="#speaking">Speaking</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-right">
+    <a href="Rashi_Mishra_Resume.pdf" download class="btn-nav">↓ Resume</a>
+    <a href="#contact" class="btn-nav btn-nav-solid">Work With Me</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-texture"></div>
+  <div class="hero-lines"><span></span><span></span></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">PR &amp; Marketing Strategist</div>
+    <h1 class="hero-name">Rashi<br><em>Mishra</em></h1>
+    <p class="hero-desc">Building brands that command rooms, secure coverage, and dominate narratives — across media, podcasts, panels, and beyond.</p>
+    <div class="hero-stats">
+      <div><span class="stat-n">150+</span><span class="stat-l">Media Placements</span></div>
+      <div><span class="stat-n">30%</span><span class="stat-l">Avg. Social Growth</span></div>
+      <div><span class="stat-n">200+</span><span class="stat-l">Content Assets</span></div>
+      <div><span class="stat-n">4+</span><span class="stat-l">Years in Industry</span></div>
+    </div>
+    <div class="hero-ctas">
+      <a href="#press" class="cta-primary">View Press Work</a>
+      <a href="#contact" class="cta-ghost">Work With Me</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="eyebrow">About</div>
+        <h2 class="sec-title">Strategy.<br><em>Visibility.</em><br>Impact.</h2>
+        <div class="about-line"></div>
+        <div class="about-body">
+          <p>PR and marketing strategist with four years of experience turning emerging brands into industry authorities. Work spans the U.S., Canada, and India — consulting with SMEs to sharpen brand perception, scale communications infrastructure, and unlock multi-market growth.</p>
+          <p>From building and leading cross-functional teams to securing 150+ media placements, every engagement is shaped by one principle: long-term brand equity over short-term noise. Integrated campaigns, strategic media outreach, and positioning that makes introductions unnecessary.</p>
+          <p>Open to senior PR roles, consulting engagements, and brand partnerships.</p>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:.15s">
+        <div class="eyebrow">Expertise</div>
+        <ul class="expertise-list">
+          <li>PR Strategy & Campaign Execution</li>
+          <li>Media Relations & Press Outreach</li>
+          <li>Podcast & Panel Placement</li>
+          <li>Awards & Recognition Programs</li>
+          <li>Brand Positioning & Messaging</li>
+          <li>Content Strategy & Thought Leadership</li>
+          <li>SEO & Digital Brand Visibility</li>
+          <li>Team Building & Leadership</li>
+          <li>Social Media Growth Strategy</li>
+          <li>Business Development & Expansion</li>
+          <li>Influencer & Partnership Marketing</li>
+          <li>Multi-Market Brand Communications</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRESS ── -->
+<section id="press">
+  <div class="container">
+    <div class="press-header">
+      <div>
+        <div class="eyebrow">Media Coverage</div>
+        <h2 class="sec-title" style="margin-bottom:0">Press</h2>
+      </div>
+    </div>
+
+    <!-- NOTABLE FEATURED -->
+    <div class="eyebrow" style="margin-bottom:20px">Notable &amp; Selected Features</div>
+    <div class="featured-cards reveal">
+      <a href="https://www.latimes.com/b2b/banking-finance/story/2025-09-18/interior-images-acquired-the-designers-group" target="_blank" class="press-card">
+        <span class="pc-arrow">↗</span>
+        <div class="pc-source">LA Times</div>
+        <div class="pc-title">Interior Images Acquired: The Designers Group</div>
+        <div class="pc-date">September 2025</div>
+      </a>
+      <a href="https://www.crainsnewyork.com/recognitions/notable-leaders-in-philanthropy/2025/blima-ehrentreu/" target="_blank" class="press-card">
+        <span class="pc-arrow">↗</span>
+        <div class="pc-source">Crain's New York Business</div>
+        <div class="pc-title">Notable Leaders in Philanthropy 2025</div>
+        <div class="pc-date">June 2025</div>
+      </a>
+      <a href="https://builtworlds.com/news/designing-smart-buildings-qa-designers-group-founder-ceo-blima-ehrentreu/" target="_blank" class="press-card">
+        <span class="pc-arrow">↗</span>
+        <div class="pc-source">BuiltWorlds</div>
+        <div class="pc-title">Designing Smart Buildings: Q&A with The Designers Group Founder & CEO</div>
+        <div class="pc-date">April 2025</div>
+      </a>
+      <a href="https://www.forbes.com/sites/rachelmontanez/2022/11/14/this-overlooked-element-can-help-combat-burnout-via-the-metaverse/" target="_blank" class="press-card">
+        <span class="pc-arrow">↗</span>
+        <div class="pc-source">Forbes</div>
+        <div class="pc-title">This Overlooked Element Can Help Combat Burnout Via the Metaverse</div>
+        <div class="pc-date">November 2022</div>
+      </a>
+      <a href="https://commercialobserver.com/2022/08/blima-ehrentreu-tdg-design/" target="_blank" class="press-card">
+        <span class="pc-arrow">↗</span>
+        <div class="pc-source">Commercial Observer</div>
+        <div class="pc-title">Blima Ehrentreu Leans on Design to Foster Change in CRE</div>
+        <div class="pc-date">August 2022</div>
+      </a>
+      <a href="https://www.constructionexec.com/article/ethically-blending-design-concepts-during-the-multifamily-boom" target="_blank" class="press-card">
+        <span class="pc-arrow">↗</span>
+        <div class="pc-source">Construction Executive</div>
+        <div class="pc-title">Ethically Blending Design Concepts During the Multifamily Boom</div>
+        <div class="pc-date">June 2024</div>
+      </a>
+    </div>
+
+    <!-- ALSO FEATURED IN -->
+    <span class="also-label">Also Featured In</span>
+    <div class="pill-row reveal" style="transition-delay:.1s">
+      <a href="https://www.theurbanlivingmagazine.com/product-page/september-october-2025-issue" target="_blank" class="pill">Urban Design Magazine</a>
+      <a href="https://canvasrebel.com/meet-blima-ehrentreu-2/" target="_blank" class="pill">Canvas Rebel</a>
+      <a href="https://wemagazineforwomen.com/meet-blima-ehrentreu-this-weeks-featured-woman-in-business/" target="_blank" class="pill">WE Magazine</a>
+      <a href="https://www.healthcarebusinesstoday.com/designers-group-senior-living-interior-images-acquisition/" target="_blank" class="pill">Healthcare Business Today</a>
+      <a href="https://boldjourney.com/blima-ehrentreu-on-life-lessons-legacy-highlight/" target="_blank" class="pill">Bold Journey</a>
+      <a href="https://online.fliphtml5.com/zpnwi/cfsk/?search=blima#p=22" target="_blank" class="pill">KNOW Magazine</a>
+      <a href="https://www.hotelexecutive.com/business_review/8302/invisible-design-how-thoughtful-interiors-can-reduce-operational-costs-in-hospitality" target="_blank" class="pill">Hotel Executive</a>
+      <a href="https://www.hbsblog.ca/single-post/blima-ehrentreu-usa-crafting-spaces-changing-lives" target="_blank" class="pill">Humble Beginning Stories</a>
+      <a href="https://www.canadianinteriors.com/2025/04/24/designing-with-identity-elevating-brand-presence-through-interior-spaces/" target="_blank" class="pill">Canadian Interiors</a>
+      <a href="https://www.hotelexecutive.com/business_review/8167/transforming-hospitality-designing-hotels-for-the-new-era-of-work-and-leisure" target="_blank" class="pill">Hotel Executive</a>
+      <a href="https://constructionbusinessoutlook.com/how-the-designers-group-uses-construction-erp-to-transform-interior-design-projects/" target="_blank" class="pill">Construction Business Outlook</a>
+      <a href="https://www.healthcarebusinesstoday.com/innovative-design-on-a-budget/" target="_blank" class="pill">Healthcare Business Today</a>
+      <a href="https://www.femfounder.co/femfounderstories/2024/11/3/believe-in-your-vision-and-be-prepared-to-put-in-the-hard-work-to-make-it-a-reality-with-blima-ehrentreu" target="_blank" class="pill">Fem Founder</a>
+      <a href="https://floorfocus.mydigitalpublication.com/publication/?m=62450&i=832406&p=16&ver=html5" target="_blank" class="pill">Floor Focus Magazine</a>
+      <a href="https://www.womenstory.in/post/visionary-leadership-advice-part-7" target="_blank" class="pill">Woman Story</a>
+      <a href="https://commercialobserver.com/2024/08/architects-black-women/" target="_blank" class="pill">Commercial Observer</a>
+      <a href="https://www.workdesign.com/2024/07/talleyrand-new-jersey/" target="_blank" class="pill">Work Design Magazine</a>
+      <a href="https://rebusinessonline.com/designers-transform-urban-landscapes-by-converting-office-spaces-to-affordable-housing/" target="_blank" class="pill">RE Business Online</a>
+      <a href="https://thehomeatlas.com/the-designers-group-feature/" target="_blank" class="pill">The Home Atlas</a>
+      <a href="https://www.constructionexec.com/article/strategic-interior-design-encourages-mental-and-physical-wellbeing-while-waiting-at-urgent-care" target="_blank" class="pill">Construction Executive</a>
+      <a href="https://community.thriveglobal.com/blima-ehrentreu-on-how-we-need-to-adjust-to-the-future-of-work/" target="_blank" class="pill">Thrive Global</a>
+      <a href="https://iamunbreakable.com/product/i-am-unbreakable-magazine/" target="_blank" class="pill">I Am Unbreakable</a>
+      <a href="https://upjourney.com/how-to-motivate-employees" target="_blank" class="pill">Up Journey</a>
+      <a href="https://issuu.com/bocdesigninc/docs/ccr-issue.10_3e2e14b4975122/84" target="_blank" class="pill">CC&R Magazine</a>
+      <a href="https://billionsuccess.com/blima-ehrentreu/" target="_blank" class="pill">Billion Success</a>
+      <a href="https://www.healthcarebusinesstoday.com/elevating-eye-clinics-design-solutions/" target="_blank" class="pill">Healthcare Business Today</a>
+      <a href="https://www.healthcarebusinesstoday.com/the-designers-group-is-redefining-senior-care-through-innovative-design/" target="_blank" class="pill">Healthcare Business Today</a>
+      <a href="https://bhbusiness.com/2023/08/25/the-4-trends-driving-behavioral-health-facility-design/" target="_blank" class="pill">Behavioral Health Business</a>
+      <a href="https://hoteldesigns.net/guide_to_hotel_desig/part-79-redefining-senior-living-with-hospitality-principles/" target="_blank" class="pill">Hotel Designs</a>
+      <a href="https://valiantceo.com/blima-ehrentreu-the-designers-group/" target="_blank" class="pill">Valiant CEO</a>
+      <a href="https://medium.com/wellnessvoice/sustainable-success-exploring-the-integration-of-sustainability-and-social-responsibility-in-e0acc7908681" target="_blank" class="pill">Wellness Voice</a>
+      <a href="https://www.amimagazine.org/2023/04/19/how-to-design-spaces/" target="_blank" class="pill">Ami Magazine</a>
+      <a href="https://medium.com/authority-magazine/the-new-portrait-of-leadership-blima-ehrentreu-of-the-designers-group-on-strategies-to-shape-7897b6ad7797" target="_blank" class="pill">Authority Magazine</a>
+      <a href="https://www.rd.com/list/expensive-looking-home/" target="_blank" class="pill">Reader's Digest</a>
+      <a href="https://medium.com/authority-magazine/blima-ehrentreu-of-the-designers-group-on-how-leaders-make-difficult-decisions-a2fcdf3d9bf3" target="_blank" class="pill">Authority Magazine</a>
+      <a href="https://canvasrebel.com/meet-blima-ehrentreu/" target="_blank" class="pill">Canvas Rebel</a>
+      <a href="https://www.multihousingnews.com/will-senior-housing-rise-in-2023/" target="_blank" class="pill">Multi-Housing News</a>
+      <a href="https://www.healthcarefacilitiestoday.com/posts/The-Reason-Behind-the-Luxury-Senior-Care-Facilities-Boom--28023" target="_blank" class="pill">Healthcare Facility Today</a>
+      <a href="https://medium.com/authority-magazine/women-of-the-c-suite-blima-ehrentreu-of-the-designers-group-on-the-five-things-you-need-to-cfc421196cd4" target="_blank" class="pill">Authority Magazine</a>
+      <a href="https://www.mcknights.com/marketplace/marketplace-experts/designers-with-a-green-thumb-enhancing-high-end-senior-care-with-biophilia/" target="_blank" class="pill">McKnight's</a>
+      <a href="https://hconews.com/2022/09/27/regal-revamp-for-brooklyn-nursing-and-rehab-center/" target="_blank" class="pill">H+CO News</a>
+      <a href="https://ccr-mag.com/the-designers-group-unveils-buzzing-education-designs-for-clever-bee/" target="_blank" class="pill">Commercial Construction & Renovation</a>
+      <a href="https://constructionbusinessoutlook.com/how-interior-choices-complement-civil-engineering-practices-for-greener-energy-efficient-structures/" target="_blank" class="pill">Construction Business Outlook</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CASE STUDIES ── -->
+<section id="work">
+  <div class="container">
+    <div class="eyebrow">Case Studies</div>
+    <h2 class="sec-title">Strategic Work</h2>
+    <p class="sec-sub">From objective to outcome — every campaign with a story.</p>
+
+    <div class="case-study reveal">
+      <div class="case-hdr" onclick="toggleCase(this)">
+        <div>
+          <div class="case-num">01 — PR STRATEGY</div>
+          <div class="case-ttl">Building a 150+ Media Placement Engine from Zero</div>
+        </div>
+        <div class="case-tog">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-grid">
+          <div class="case-pillar"><span class="pillar-lbl">Problem</span><p class="pillar-txt">An interior design firm with strong work but minimal media presence, no journalist relationships, and no systematic PR strategy. Brand recognition was limited to word-of-mouth within existing networks.</p></div>
+          <div class="case-pillar"><span class="pillar-lbl">Strategy</span><p class="pillar-txt">Developed an integrated PR roadmap spanning media outreach, HARO-based journalist relationship building, podcast pitching, award nominations, and panel speaker positioning — niche trade press first, then national outlets.</p></div>
+          <div class="case-pillar"><span class="pillar-lbl">Execution</span><p class="pillar-txt">Built a media contact database from scratch. Crafted individualized pitches per journalist vertical. Managed editorial calendars, coordinated interview prep, and produced supporting content for each placement.</p></div>
+          <div class="case-pillar"><span class="pillar-lbl">Result</span><p class="pillar-txt">150+ placements across Forbes, LA Times, Commercial Observer, Crain's, Construction Executive, and dozens of trade publications — positioning the firm as a top-cited voice in commercial interior design.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-study reveal" style="transition-delay:.1s">
+      <div class="case-hdr" onclick="toggleCase(this)">
+        <div>
+          <div class="case-num">02 — SOCIAL MEDIA</div>
+          <div class="case-ttl">30% Follower Growth Through Data-Driven Content Strategy</div>
+        </div>
+        <div class="case-tog">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-grid">
+          <div class="case-pillar"><span class="pillar-lbl">Problem</span><p class="pillar-txt">Social channels were underperforming — low engagement, inconsistent posting, and no measurable connection between content and business outcomes. Follower growth had plateaued across all platforms.</p></div>
+          <div class="case-pillar"><span class="pillar-lbl">Strategy</span><p class="pillar-txt">Full channel audit and competitive analysis. Identified high-performing content categories and built a 4-week content calendar template with vertical-specific adaptations for each platform.</p></div>
+          <div class="case-pillar"><span class="pillar-lbl">Execution</span><p class="pillar-txt">Implemented structured content workflows, integrated analytics dashboards, A/B tested caption formats, and aligned social content to concurrent press placements for amplified reach. Produced 200+ pieces.</p></div>
+          <div class="case-pillar"><span class="pillar-lbl">Result</span><p class="pillar-txt">Average 30% growth in followers and engagement. Posts tied to media coverage consistently outperformed organic content 3–5x. Social now functions as an active brand visibility tool, not just a content archive.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-study reveal" style="transition-delay:.2s">
+      <div class="case-hdr" onclick="toggleCase(this)">
+        <div>
+          <div class="case-num">03 — AWARDS STRATEGY</div>
+          <div class="case-ttl">Securing 50+ Awards & Industry Nominations</div>
+        </div>
+        <div class="case-tog">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-grid">
+          <div class="case-pillar"><span class="pillar-lbl">Problem</span><p class="pillar-txt">No systematic awards strategy. Recognition was reactive — relying on unsolicited nominations rather than a managed, proactive submissions process tied to broader PR goals.</p></div>
+          <div class="case-pillar"><span class="pillar-lbl">Strategy</span><p class="pillar-txt">Researched and mapped 80+ relevant awards across real estate, interior design, construction, and women-in-business categories. Created a rolling awards calendar with deadlines and tailored messaging.</p></div>
+          <div class="case-pillar"><span class="pillar-lbl">Execution</span><p class="pillar-txt">Drafted compelling submissions, coordinated documentation, managed follow-up, and leveraged each win for concurrent press cycles — turning each award into a PR trigger event.</p></div>
+          <div class="case-pillar"><span class="pillar-lbl">Result</span><p class="pillar-txt">Recognition from Crain's, GlobeSt., Forbes, City & State NY, AI Magazine, Corporate Vision, BUILD, Connect CRE, and 40+ others — cementing the firm as a nationally recognized design leader.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-study reveal" style="transition-delay:.3s">
+      <div class="case-hdr" onclick="toggleCase(this)">
+        <div>
+          <div class="case-num">04 — TEAM & OPERATIONS</div>
+          <div class="case-ttl">Scaling a 12-Member Marketing Team Across 3 Markets</div>
+        </div>
+        <div class="case-tog">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-grid">
+          <div class="case-pillar"><span class="pillar-lbl">Problem</span><p class="pillar-txt">The marketing function was a one-person operation without defined workflows, KPIs, or the team capacity to execute at the volume required to support a growing multi-city firm.</p></div>
+          <div class="case-pillar"><span class="pillar-lbl">Strategy</span><p class="pillar-txt">Mapped the full marketing and PR function against growth targets for New York, Florida, and Toronto. Designed a team structure with clear role ownership and skills requirements before any hiring began.</p></div>
+          <div class="case-pillar"><span class="pillar-lbl">Execution</span><p class="pillar-txt">Collaborated with HR on recruitment pipelines, conducted interviews, onboarded hires, and built internal SOPs, tooling standards, and performance review frameworks. Led weekly standups.</p></div>
+          <div class="case-pillar"><span class="pillar-lbl">Result</span><p class="pillar-txt">Built and managed a high-performing 12-member team. Supported broader hiring that brought 30+ professionals into the design division. Full strategic and executional capacity across all markets.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AWARDS ── -->
+<section id="awards">
+  <div class="container">
+    <div class="eyebrow">Recognition</div>
+    <h2 class="sec-title">Awards &amp; <em>Honors</em></h2>
+    <p class="sec-sub">Notable &amp; selected recognitions driven through strategic PR.</p>
+
+    <div class="awards-cards reveal">
+      <a href="https://readsitenews.com/40-under-40-winner/blima-ehrentreu/" target="_blank" class="award-card">
+        <span class="aw-year">2025</span>
+        <div class="aw-name">40 Under 40 in Canadian Construction — On Site</div>
+      </a>
+      <a href="https://heroes.involverolemodels.org/search-people/?keyword=blima" target="_blank" class="award-card">
+        <span class="aw-year">2025</span>
+        <div class="aw-name">Heroes Executive Role Model List — Involve</div>
+      </a>
+      <a href="https://www.acquisition-international.com/winners/the-designers-group-2/" target="_blank" class="award-card">
+        <span class="aw-year">2025</span>
+        <div class="aw-name">Most Visionary Interior Design Business Leader — AI Magazine</div>
+      </a>
+      <a href="https://www.crainsnewyork.com/recognitions/notable-leaders-in-philanthropy/2025/blima-ehrentreu/" target="_blank" class="award-card">
+        <span class="aw-year">2025</span>
+        <div class="aw-name">Notable Leaders in Philanthropy — Crain's NY Business</div>
+      </a>
+      <a href="https://theknowwomen.com/100-women-to-know-in-america-class-of-2025/" target="_blank" class="award-card">
+        <span class="aw-year">2025</span>
+        <div class="aw-name">100 Women to Know in America</div>
+      </a>
+      <a href="https://www.ceo-review.com/winners/the-designers-group/" target="_blank" class="award-card">
+        <span class="aw-year">2025</span>
+        <div class="aw-name">Global CEO Excellence — CEO Monthly</div>
+      </a>
+      <a href="https://www.cityandstateny.com/power-lists/2024/12/2024-trailblazers-economic-development/401560/#blima-ehrentreu" target="_blank" class="award-card">
+        <span class="aw-year">2024</span>
+        <div class="aw-name">CSNY Trailblazers: Economic Development — City &amp; State NY</div>
+      </a>
+      <a href="https://www.crainsnewyork.com/awards/notable-real-estate-leaders-2024" target="_blank" class="award-card">
+        <span class="aw-year">2024</span>
+        <div class="aw-name">Notable Leaders in Real Estate — Crain's NY Business</div>
+      </a>
+      <a href="https://www.connectcre.com/awards/2024-women-in-real-estate-awards/new-york-tri-state/blima-ehrentreu/" target="_blank" class="award-card">
+        <span class="aw-year">2024</span>
+        <div class="aw-name">Women in Real Estate Award — Connect CRE</div>
+      </a>
+    </div>
+
+    <!-- Also awarded -->
+    <div class="subsec reveal" style="transition-delay:.15s">
+      <div class="subsec-title">Also Awarded</div>
+      <div class="subsec-note">Additional recognition driven through strategic nominations and submissions.</div>
+      <div class="pill-row">
+        <a href="https://www.globest.com/2024/09/24/influencers-in-industrial-2024/" target="_blank" class="pill">Industrial Influencers 2024 — GlobeSt.</a>
+        <a href="https://www.build-review.com/winners/the-designers-group-3/" target="_blank" class="pill">Construction & Engineering Award — BUILD</a>
+        <a href="https://globalawards.ceotodaymagazine.com/previous-editions/2024/132/" target="_blank" class="pill">Global CEO Today Awards 2024</a>
+        <a href="https://www.globest.com/2024/06/04/cres-aspiring-leaders-of-2024/" target="_blank" class="pill">CRE's Aspiring Leaders 2024 — GlobeSt.</a>
+        <a href="https://www.globest.com/2024/03/05/cres-best-bosses-of-2024/" target="_blank" class="pill">CRE Best Bosses 2024 — GlobeSt.</a>
+        <a href="https://www.globest.com/2024/04/02/cres-best-places-to-work-of-2024/" target="_blank" class="pill">CRE Best Places to Work 2024 — GlobeSt.</a>
+        <a href="https://www.crainsnewyork.com/awards/women-influence-2024" target="_blank" class="pill">Women-Forward Workplaces Finalist — Crain's</a>
+        <a href="https://luxurylifestyleawards.com/experience/top-100-luxury-interior-designers-2024" target="_blank" class="pill">Top 100 Luxury Interior Designers 2024 — Luxury Lifestyle Awards</a>
+        <a href="https://www.acquisition-international.com/winners/tdg-furniture-exchange/" target="_blank" class="pill">Most Innovative Purpose-Driven Design 2025 — AI Magazine</a>
+        <a href="https://www.build-review.com/winners/tdg-furniture-exchange/" target="_blank" class="pill">Best Residential & Commercial Interior Design 2025 — BUILD</a>
+        <a href="https://www.acquisition-international.com/winners/the-designers-group-3/" target="_blank" class="pill">Interior Design Businesswoman of the Year 2025 — AI Magazine</a>
+        <a href="https://www.build-review.com/winners/the-designers-group-5/" target="_blank" class="pill">Sustainable Space Technology Innovators 2025 — BUILD</a>
+        <a href="https://www.instagram.com/p/DMNUc0nOZyP/" target="_blank" class="pill">Top 20 Outstanding Businesses 2025 — Humble Beginning</a>
+        <a href="https://thewomensedge.org/wp-content/uploads/2025/04/2025-Top-100-Alpha-List_041025.pdf" target="_blank" class="pill">Top 100 Women-Led Businesses in Florida 2025 — WE</a>
+        <a href="https://tiaw.org/" target="_blank" class="pill">World of Difference Award — TIAW</a>
+        <a href="https://www.crainsnewyork.com/awards/2023-notable-leaders-real-estate/" target="_blank" class="pill">Notable Leaders in Real Estate 2023 — Crain's</a>
+        <a href="https://www.corporatevision-news.com/winners/the-designers-group-2/" target="_blank" class="pill">Best Residential Interior Design 2024 — Corporate Vision</a>
+        <a href="https://commercialobserver.com/2022/11/supply-chains-building-intelligence-life-science-and-carbon-neutrality-at-co-forum/" target="_blank" class="pill">Women on the Rise Award — Commercial Observer</a>
+        <a href="https://www.globest.com/2022/07/25/women-influence-2022/" target="_blank" class="pill">Women of Influence 2022 — GlobeSt.</a>
+        <a href="https://www.lux-review.com/winners/the-designers-group/" target="_blank" class="pill">Most Innovative Multi-Sector Interior Design Firm 2023 — LUXlife</a>
+        <a href="https://www.build-review.com/winners/the-designers-group/" target="_blank" class="pill">Best Luxury Interior Design Studio NYC 2023 — BUILD</a>
+        <a href="https://www.corporatevision-news.com/winners/the-designers-group/" target="_blank" class="pill">Best Residential & Commercial Design 2023 — Corporate Vision</a>
+        <a href="https://www.acquisition-international.com/winners/the-designers-group/" target="_blank" class="pill">Business Excellence Award 2024 — Acquisition International</a>
+        <a href="https://www.idc.com/getdoc.jsp?containerId=prUS52676924" target="_blank" class="pill">Global Impact Award 2024 — IDC Future Enterprise Awards</a>
+        <a href="https://www.build-review.com/winners/the-designers-group-2/" target="_blank" class="pill">Best Interior Design Firm NYC 2024 — BUILD Architecture Awards</a>
+        <a href="https://redinconnect.com/home" target="_blank" class="pill">Woman-Owned Design Firm of the Year 2022 — Red Awards</a>
+        <a href="https://www.architectsnewyork.org/best-interior-designers-new-york/" target="_blank" class="pill">Best Interior Designers in NYC — New York City Architects</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SPEAKING ── -->
+<section id="speaking">
+  <div class="container">
+    <div class="eyebrow">Media &amp; Speaking</div>
+    <h2 class="sec-title">Podcasts &amp; <em>Panels</em></h2>
+    <p class="sec-sub">Notable &amp; selected appearances.</p>
+
+    <div class="speaking-cols">
+      <!-- PODCASTS -->
+      <div class="reveal">
+        <div class="sp-col-title">Podcast Appearances</div>
+        <a href="https://open.spotify.com/episode/4xumATHImHDvwBiFGIiE7y" target="_blank" class="sp-item"><span class="sp-name">The Empowered Money Girl</span><span class="sp-date">Jan 2026</span></a>
+        <a href="https://podcasts.apple.com/us/podcast/an-interview-with-blima-ehrentreu-founder-and/id1561972021?i=1000744140442" target="_blank" class="sp-item"><span class="sp-name">Positive Impact Philanthropy</span><span class="sp-date">Jan 2026</span></a>
+        <a href="https://www.linkedin.com/events/7406343258651525121/" target="_blank" class="sp-item"><span class="sp-name">How to Founder</span><span class="sp-date">Dec 2025</span></a>
+        <a href="https://podcasts.apple.com/us/podcast/teamwork-technology-and-purpose-keys-to-firm-growth/id1575638268?i=1000725904946" target="_blank" class="sp-item"><span class="sp-name">Architect My Business</span><span class="sp-date">Nov 2025</span></a>
+        <a href="https://www.youtube.com/watch?v=pTEmjwXRd8Q" target="_blank" class="sp-item"><span class="sp-name">Flexwork Podcast</span><span class="sp-date">Sep 2025</span></a>
+        <a href="https://podcasts.apple.com/us/podcast/the-designers-group-founder-ceo-blima-ehrentreu/id1640302471?i=1000721028300" target="_blank" class="sp-item"><span class="sp-name">CEO.com Podcast</span><span class="sp-date">Aug 2025</span></a>
+        <a href="https://www.youtube.com/watch?v=pQK2DzvYG6g" target="_blank" class="sp-item"><span class="sp-name">Construction Champions</span><span class="sp-date">Jun 2025</span></a>
+        <a href="https://rwarddesign.com/episodes/the-power-of-purpose-driven-design-in-changing-lives-and-spaces-with-blima-ehrentreu/" target="_blank" class="sp-item"><span class="sp-name">Design Curious</span><span class="sp-date">May 2025</span></a>
+        <a href="https://greenbuildingmatters.com/2025/04/374-blima-ehrentreu-on-designing-with-purpose-creating-sustainable-and-transformative-spaces/" target="_blank" class="sp-item"><span class="sp-name">The Green Building Matters</span><span class="sp-date">Apr 2025</span></a>
+        <a href="https://www.growasmallbusiness.com/blueprint-for-small-business-success-lessons-in-resilience-adaptability-and-cultivating-a-winning-team-from-the-interior-design-trailblazer" target="_blank" class="sp-item"><span class="sp-name">Grow A Small Business Podcast</span><span class="sp-date">Feb 2025</span></a>
+
+        <!-- Also appeared in -->
+      </div>
+
+      <!-- PANELS -->
+      <div class="reveal" style="transition-delay:.15s">
+        <div class="sp-col-title">Panel Speaker Appearances</div>
+        <a href="https://buildexpousa.com/social_12180/" target="_blank" class="sp-item"><span class="sp-name">South Florida Build Expo 2025</span><span class="sp-date">Nov 2025</span></a>
+        <a href="https://www.uspropertyexpo.com/#/speakers?lang=en&speakerId=136570000002122126" target="_blank" class="sp-item"><span class="sp-name">APEX 2025</span><span class="sp-date">Sep 2025</span></a>
+        <a href="https://informaconnect.com/imn-ai-in-real-estate/speakers/blima-ehrentreu/" target="_blank" class="sp-item"><span class="sp-name">IMN — AI in Real Estate 2025</span><span class="sp-date">Jun 2025</span></a>
+        <a href="https://builtworlds.com/event/2025-buildings-conference/" target="_blank" class="sp-item"><span class="sp-name">BuiltWorlds Buildings Conference 2025</span><span class="sp-date">May 2025</span></a>
+        <a href="#" class="sp-item"><span class="sp-name">Building Innovation Conference 2025</span><span class="sp-date">May 2025</span></a>
+        <a href="https://www.newyorkbuildexpo.com/speakers/blima-ehrentreu" target="_blank" class="sp-item"><span class="sp-name">New York Build Expo 2025</span><span class="sp-date">Mar 2025</span></a>
+        <a href="https://www.futureofworkexpo.com/speakers.aspx#Blima%20Ehrentreu" target="_blank" class="sp-item"><span class="sp-name">Future of Work Expo 2025</span><span class="sp-date">Feb 2025</span></a>
+        <a href="https://ai4.io/vegas/speakers/" target="_blank" class="sp-item"><span class="sp-name">AI4 Artificial Intelligence Conference 2024</span><span class="sp-date">Aug 2024</span></a>
+        <a href="https://www.enr.com/future-tech/speakers/blima-ehrentreu" target="_blank" class="sp-item"><span class="sp-name">ENR Future Tech 2024</span><span class="sp-date">Jun 2024</span></a>
+        <a href="https://events.imn.org/event/93235023-cc20-402c-8385-125a88f5e2ca" target="_blank" class="sp-item"><span class="sp-name">IMN Real Estate Conference NYC 2024</span><span class="sp-date">Jun 2024</span></a>
+      </div>
+    </div>
+
+    <!-- COMBINED ALSO APPEARED -->
+    <div class="subsec reveal" style="transition-delay:.1s; margin-top:56px;">
+      <div class="subsec-title">Also Appeared On &amp; At</div>
+      <div class="subsec-note">Additional podcast features and panel appearances.</div>
+      <div class="pill-row">
+        <a href="https://www.businessofarchitecture.com/podcast/584-how-a-start-up-architect-conquered-the-fierce-nyc-market-with-blima-ehrentreu-of-the-designers-group/" target="_blank" class="pill">Business of Architecture</a>
+        <a href="https://entrearchitect.com/podcast/entrearch/leveraging-advanced-tools-for-immersive-design-experiences/" target="_blank" class="pill">Entre Architect</a>
+        <a href="https://open.spotify.com/episode/5aeJFTpL8f7TtAQJaatXuo" target="_blank" class="pill">Business Leaders of America</a>
+        <a href="https://www.youtube.com/watch?v=BiQkE4U8kbc" target="_blank" class="pill">Leaders of Transformation</a>
+        <a href="https://open.spotify.com/show/4zQoRTBz4JfC3ndBucKHye" target="_blank" class="pill">Construction Business Builder</a>
+        <a href="https://podcasts.apple.com/ca/podcast/wil-talk-127-blima-ehrentreu-founder-ceo-of/id1534719698?i=1000660390619" target="_blank" class="pill">WIL Talk</a>
+        <a href="https://open.spotify.com/episode/6kzg987lS0JeG7IG6dGPww" target="_blank" class="pill">Biz Under Construction</a>
+        <a href="https://construction-disruption.com/episode/the-psychological-impact-of-interior-design-with-blima-ehrentreu" target="_blank" class="pill">Construction Disruption</a>
+        <a href="https://constructed-futures.simplecast.com/episodes/blima-ehrentreu-designing-with-purpose-at-the-designers-group" target="_blank" class="pill">Constructed Futures Podcast</a>
+        <a href="https://casmoncapital.com/how-investors-should-design-for-profits-with-blima-ehrentreu-ep-597/" target="_blank" class="pill">Multifamily Insights by Casmon Capital</a>
+        <a href="https://www.constructiongenius.com/podcast/beyond-aesthetics-how-great-design-shapes-and-transforms-the-built-environment-with-blima-ehrentreu-ep-273" target="_blank" class="pill">Construction Genius Podcast</a>
+        <a href="https://www.youtube.com/watch?v=D1eBNZq-O14" target="_blank" class="pill">Construction Champions (2024)</a>
+        <a href="https://podcasts.apple.com/us/podcast/designing-with-purpose-creating-spaces-that-transform/id1669941557?i=1000637934552" target="_blank" class="pill">I Am Unbreakable</a>
+        <a href="https://www.youtube.com/watch?v=RT1ykp3lLEQ&t=21s" target="_blank" class="pill">Interior Motions</a>
+        <a href="https://www.youtube.com/watch?v=NJMjX5pLI3s&t=3s" target="_blank" class="pill">Thriving in Construction</a>
+        <a href="https://podcasts.apple.com/us/podcast/elevating-senior-care/id1404674378?i=1000634172425" target="_blank" class="pill">Foresight Radio</a>
+        <a href="https://theacademypresents.libsyn.com/the-power-of-purposeful-interior-design-with-blima-ehrentreu" target="_blank" class="pill">REI Rocks Podcast</a>
+        <a href="https://theacademypresents.libsyn.com/transforming-experiences-through-design-with-blima-ehrentreu" target="_blank" class="pill">Transforming Experiences Through Design</a>
+        <a href="https://www.designerstoday.com/video-galleries/profiles-in-design/" target="_blank" class="pill">Profiles in Design — Designers Today</a>
+        <a href="https://open.spotify.com/episode/175XBDgLblxU6BFPQDQxGN" target="_blank" class="pill">Innovative Entrepreneurs</a>
+        <a href="https://theleadershiftproject.com/leadershifter-podcast/99-reforming-the-design-industry-with-the-designers-group-founder-ceo-blima-ehrentreu/" target="_blank" class="pill">Leadershifter Podcast</a>
+        <a href="https://www.tuesdaysthanks.com/?pgid=l7q6o5gq-802e110e-5e76-4f8a-84a3-d553d50ffb02" target="_blank" class="pill">Tuesday Thanks Podcast</a>
+        <a href="https://www.bradleavitt.com/podcast/184" target="_blank" class="pill">AFT Construction Podcast</a>
+        <a href="https://www.youtube.com/watch?v=uNMNMewKG3c" target="_blank" class="pill">The CRE SharkEye Show</a>
+        <a href="https://open.spotify.com/episode/7a5VehH5hDCZwoCbFTWiY3" target="_blank" class="pill">Profits with Purpose</a>
+        <a href="https://www.buzzsprout.com/2207666/14215470" target="_blank" class="pill">Spec Shaman Podcast</a>
+        <a href="https://www.blogtalkradio.com/thriving-entrepreneur/2023/10/24/maximum-impact" target="_blank" class="pill">Thriving Entrepreneur</a>
+        <a href="https://www.youtube.com/watch?v=6EiuaCmWAT4" target="_blank" class="pill">Peer 2 Peer Real Estate Show</a>
+        <a href="https://www.newyorkbuildexpo.com/speakers/blima-ehrentreu" target="_blank" class="pill">New York Build Expo 2024</a>
+        <a href="https://commercialobserver.com/2023/11/fall-state-of-cre-forum-2023/" target="_blank" class="pill">Commercial Observer Fall State of CRE 2023</a>
+        <a href="https://commercialobserver.com/2023/09/health-care-construction-2023-new-york/" target="_blank" class="pill">Commercial Observer Healthcare Forum 2023</a>
+        <a href="https://newyork.theaisummit.com/speakers/blima-ehrentreu" target="_blank" class="pill">AI Summit New York 2023</a>
+        <a href="https://www.futureofworkexpo.com/speakers.aspx#Blima%20Ehrentreu" target="_blank" class="pill">Future of Work Expo 2024</a>
+        <a href="https://www.youtube.com/watch?v=-17QoFYda2I" target="_blank" class="pill">AI4 Conference 2023</a>
+        <a href="https://youtu.be/ee6bxSMFkyQ" target="_blank" class="pill">Fohilo Webinar</a>
+        <a href="https://www.linkedin.com/posts/international-luxury-hotel-association_ilha-luxuryhospitality-sustainability-activity-7299751460244758528-0Tm4" target="_blank" class="pill">International Luxury Hotel Association Webinar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="container-md">
+    <div class="eyebrow">Contact</div>
+    <h2 class="contact-title">Let's Work<br><em>Together</em></h2>
+    <a href="mailto:raashimishra12@gmail.com" class="contact-email">raashimishra12@gmail.com</a>
+    <p class="contact-desc">Open to senior PR roles, fractional engagements, and brand consulting partnerships in design, real estate, hospitality, and beyond.</p>
+    <div class="contact-btns">
+      <a href="mailto:raashimishra12@gmail.com" class="cta-primary">Get in Touch</a>
+      <a href="Rashi_Mishra_Resume.pdf" download class="cta-ghost">↓ Download Resume</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="f-logo">Rashi Mishra</div>
+  <p>PR &amp; Marketing Strategist</p>
+  <p>raashimishra12@gmail.com</p>
+</footer>
+
+<script>
+  function toggleCase(header) {
+    const body = header.nextElementSibling;
+    const tog = header.querySelector('.case-tog');
+    const isOpen = body.classList.contains('open');
+    document.querySelectorAll('.case-body').forEach(b => b.classList.remove('open'));
+    document.querySelectorAll('.case-tog').forEach(t => t.textContent = '+');
+    if (!isOpen) { body.classList.add('open'); tog.textContent = '×'; }
+  }
+
+  // Scroll reveal
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
